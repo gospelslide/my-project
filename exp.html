@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+</head>
+<body>
+<h1 id="hello"></h1>
     <script type="text/javascript">
         function getCookieValue(name) {
             return document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || '';
         }
         var at = getCookieValue("atodac");
-        alert(at);
+        var h1 = document.getElementById("hello");
+        h1.innerHTML = at;
     </script>
-</head>
-<body>
-<h1></h1>
 </body>
 </html>
