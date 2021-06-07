@@ -13,12 +13,14 @@
         <h2 id="type3"></h2>
         <a href="${voltronURL}"></a>
         <script type="application/javascript">
-            try {
-                kindle.odac.triggerDeviceRegistration("hello");
-            }
-            catch (e) {
-                var error = document.getElementById("error");
-                error.innerHTML = e.message;
+            window.onload = function() {
+                 try {
+                    kindle.odac.triggerDeviceRegistration("hello");
+                }
+                catch (e) {
+                    var error = document.getElementById("error");
+                    error.innerHTML = e.message;
+                }
             }
 
             // // var cookie = document.getElementById("cookie");
