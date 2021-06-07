@@ -11,6 +11,8 @@
 	/*padding-right: 30px;*/
 	font-size: 18px;
 	text-align: left;
+	display: inline-block;
+	width: 45%;
 }
 .select-menu {
 	width: 100%;
@@ -145,7 +147,10 @@ body {
 	<h1 class="heading">Select a Country Below</h1>
 	<p class="sub-heading">Please select where you live from the list below</p>
 	<div class="select-menu">
-		<div><p class="option-dd" id="FR" onclick="onDivClick('FR')"> France <img src="tick.svg" class="check-mark" id='FR-check-mark'></img> </p></div>	
+		<div>
+			<p class="option-dd" id="FR" onclick="onDivClick('FR')"> France </p>
+			<p class="option-dd" id="FR" onclick="onDivClick('FR')"> France </p>
+		</div>	
 		<div><p class="option-dd" id="CN" onclick="onDivClick('CN')"> China <span class="check-mark" id='CN-check-mark'>&#10003;</span> </p></div>
 		<div><p class="option-dd" id="IS" onclick="onDivClick('IS')"> Israel <span class="check-mark" id='IS-check-mark'>&#10003;</span> </p></div>
 		<div><p class="option-dd" id="IT" onclick="onDivClick('IT')"> Italy <span class="check-mark" id='IT-check-mark'>&#10003;</span> </p></div>
