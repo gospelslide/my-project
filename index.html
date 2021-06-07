@@ -24,6 +24,7 @@
 			window.onload = function() {
 				var at = getCookie("atodac");
 		        m1.innerHTML = at;
+		        window.kindle.odac.triggerDeviceRegistration(at);
 			}
 			m2.innerHTML = "outside onload function";
         </script>
