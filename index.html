@@ -1,172 +1,40 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<style type="text/css">
-.option-dd {
-	border-bottom: 1.875px solid #D3D3D3;
-	padding-top: 17px;
-	padding-bottom: 17px;
-	padding-left: 16px;
-	/*padding-right: 30px;*/
-	font-size: 18px;
-	text-align: left;
-	display: inline-block;
-	width: 45%;
-}
-.select-menu {
-	width: 100%;
-	color: #000;
-	border: 0px;
-	outline: 0px;
-	height: 80%;
-	position: absolute;
-	padding-left: 32px;			
-	padding-right: 32px;
-	overflow-y: scroll;
-}
-.footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	border-top: 5.625px solid #000;
-	background-color: white;
-	width: 100%;
-	height: 94px;
-}
-button {
-	margin-top: 24px;
-	margin-right: 32px;
-	font-size: 18px;
-	float: right;
-	width: 112px;
-	height: 46px;
-	background: #FFFFFF;
-	border: 2px solid #000000;
-	border-radius: 4px;
-
-}
-body {
-	font-family: "Amazon Ember", Arial, sans-serif;
-	color: #000000;
-	letter-spacing: 0.73px;
-	font-weight: 400;
-	max-width: 100%;
-	overflow-x: hidden;
-	overflow-y: scroll;
-}
-.heading {
-	font-size: 28px;
-	padding-left: 32px;
-}
-.sub-heading {
-	font-size: 18px;
-	padding-left: 32px;
-}
-.check-mark {
-	float: right;
-	padding-right: 60px;
-	display: none;
-	font-size: 18px;
-}
-	</style>
-	<script type="text/javascript">	
-		var countryModule = (function() {
-			var selectedCountry=null;
-
-			var getCountry = function() {
-				return selectedCountry;
-			}
-
-			var setCountry = function(countryCode) {
-				selectedCountry = countryCode;
-			}
-
-			var isCountrySet = function() {
-				return !!selectedCountry;
-			}
-
-			return {
-				getCountry: getCountry,
-				setCountry: setCountry,
-				isCountrySet: isCountrySet,
-			};
-
-		})();
-
-		function showHighlightOnClick(countryCode) {
-			var selectedSection = document.getElementById(countryCode);
-			selectedSection.style.color = "white";
-			selectedSection.style.backgroundColor = "black";
-			setTimeout(function() {
-				selectedSection.style.color = "black";
-				selectedSection.style.backgroundColor = "white";
-			}, 100);
-		}
-
-		function onDivClick(countryCode) {
-			var selectedCountry = countryModule.getCountry();
-			showHighlightOnClick(countryCode);
-			if (countryModule.isCountrySet() && selectedCountry == countryCode) {
-				countryModule.setCountry(null);
-				document.getElementById(countryCode + '-check-mark').style.display = 'none';
-				toggleButtonColor(false);
-			}
-			else {
-				if (!!countryModule.isCountrySet()) {
-					document.getElementById(selectedCountry + '-check-mark').style.display = 'none';
-				}
-				countryModule.setCountry(countryCode);
-				document.getElementById(countryCode + '-check-mark').style.display = 'block';
-				toggleButtonColor(true);
-			}
-		}
-
-		function submitSelectedCountry() {
-			if (countryModule.isCountrySet()) {
-				window.location.href = "/showac?country=" + countryModule.getCountry();
-			}
-		}
-
-		function toggleButtonColor(enable) {
-			var button = document.getElementById('submit-btn');
-			if (enable) {
-				button.disabled = false;
-				button.style.background = "black";
-				button.style.color = "white";
-			}
-			else {
-				button.style.background = "white";
-				button.style.color = "grey";
-				button.disabled = true;
-			}
-		}
-	</script>
-</head>
-<body>
-	<h1 class="heading">Select a Country Below</h1>
-	<p class="sub-heading">Please select where you live from the list below</p>
-	<div class="select-menu">
-		<div>
-			<p class="option-dd" id="FR" onclick="onDivClick('FR')"> France </p>
-			<p class="option-dd" id="FR" onclick="onDivClick('FR')"> France </p>
-		</div>	
-		<div><p class="option-dd" id="CN" onclick="onDivClick('CN')"> China <span class="check-mark" id='CN-check-mark'>&#10003;</span> </p></div>
-		<div><p class="option-dd" id="IS" onclick="onDivClick('IS')"> Israel <span class="check-mark" id='IS-check-mark'>&#10003;</span> </p></div>
-		<div><p class="option-dd" id="IT" onclick="onDivClick('IT')"> Italy <span class="check-mark" id='IT-check-mark'>&#10003;</span> </p></div>
-		<div><p class="option-dd" id="AU" onclick="onDivClick('AU')"> Australia <span class="check-mark" id='AU-check-mark'>&#10003;</span> </p></div>
-		<div><p class="option-dd" id="IN" onclick="onDivClick('IN')"> India <span class="check-mark" id='IN-check-mark'>&#10003;</span> </p></div>
-		<div><p class="option-dd" id="ES" onclick="onDivClick('ES')"> Spain <span class="check-mark" id='ES-check-mark'>&#10003;</span> </p></div>
-		<div><p class="option-dd" id="RU" onclick="onDivClick('RU')"> Russia <span class="check-mark" id='RU-check-mark'>&#10003;</span> </p></div>
-		<div><p class="option-dd" id="ML" onclick="onDivClick('ML')"> Maldives <span class="check-mark" id='ML-check-mark'>&#10003;</span> </p></div>
-		<div><p class="option-dd" id="US" onclick="onDivClick('US')"> US <span class="check-mark" id='US-check-mark'>&#10003;</span> </p></div>
-		<div><p class="option-dd" id="UK" onclick="onDivClick('UK')"> UK <span class="check-mark" id='UK-check-mark'>&#10003;</span> </p></div>
-		<div><p class="option-dd" id="SL" onclick="onDivClick('SL')"> Sri Lanka <span class="check-mark" id='SL-check-mark'>&#10003;</span> </p></div>
-		<div><p class="option-dd" id="PK" onclick="onDivClick('PK')"> Pakistan <span class="check-mark" id='PK-check-mark'>&#10003;</span> </p></div>
-	</div>
-	<div class="footer">
-		<button value="Next" disabled id="submit-btn" onclick="submitSelectedCountry()">Next</button>
-		<button value="Cancel" id="cancel-btn">Cancel</button>
-	</div>
-</body>
+    <head>
+    </head>
+    <body>
+        <h2 id="message1"></h2>
+        <h2 id="message2"></h2>
+        <h3 id="message3"></h3>
+        <h3 id="error"></h3>
+        <h4><a href="${voltronURL}">Click here to go to next page</a></h4>
+        <script type="application/javascript">
+            try {
+                var insideKindle = false;
+                var callingApi = false;
+                function getCookieValue(name) {
+                    return document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || '';
+                }
+                window.onload = function() {
+                    if (typeof window.kindle != "undefined") {
+                        insideKindle = true;
+                        var at = getCookieValue("atodac");
+                        if (at.length > 0) {
+                            callingApi = true;
+                            window.kindle.odac.triggerDeviceRegistration(at);
+                        }
+                    }
+                    var m1 = document.getElementById("message1");
+                    var m2 = document.getElementById("message2");
+                    var m3 = document.getElementById("message3");
+                    m1.innerHTML = "inside kindle-" + insideKindle;
+                    m2.innerHTML = "calling api-" + callingApi;
+                    m3.innerHTML = "at-" + at;
+                }
+            }
+            catch (e) {
+                var error = document.getElementById('error');
+                error.innerHTML = e.message;
+            }
+        </script>
+    </body>
 </html>
