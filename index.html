@@ -8,33 +8,23 @@
         <h3 id="error"></h3>
         <h4><a href="${voltronURL}">Click here to go to next page</a></h4>
         <script type="application/javascript">
-            try {
-                var insideKindle = false;
-                var callingApi = false;
-                function getCookieValue(name) {
-                    return document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || '';
-                }
-                window.onload = function() {
-                    if (typeof window.kindle != "undefined") {
-                        insideKindle = true;
-                        var at = getCookieValue("atodac");
-                        if (at.length > 0) {
-                            callingApi = true;
-                            window.kindle.odac.triggerDeviceRegistration(at);
-                        }
-                    }
-                    var m1 = document.getElementById("message1");
-                    var m2 = document.getElementById("message2");
-                    var m3 = document.getElementById("message3");
-                    m1.innerHTML = "inside kindle-" + insideKindle;
-                    m2.innerHTML = "calling api-" + callingApi;
-                    m3.innerHTML = "at-" + at;
-                }
-            }
-            catch (e) {
-                var error = document.getElementById('error');
-                error.innerHTML = e.message;
-            }
+			function getCookie(name) {
+				var nameEQ = name + "=";
+				var ca = document.cookie.split(';');
+				for(var i=0;i < ca.length;i++) {
+					var c = ca[i];
+					while (c.charAt(0)==' ') c = c.substring(1,c.length);
+					if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+				}
+				return null;
+			}
+			var m1 = document.getElementById("message1");
+			var m2 = document.getElementById("message2");
+			var m3 = document.getElementById("message3");
+			window.onload = function() {
+			        m1.innerHTML = "inside onload function";
+			}
+			m2.innerHTML = "outside onload function";
         </script>
     </body>
 </html>
