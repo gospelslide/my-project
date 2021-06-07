@@ -22,7 +22,8 @@
 			var m2 = document.getElementById("message2");
 			var m3 = document.getElementById("message3");
 			window.onload = function() {
-			        m1.innerHTML = "inside onload function";
+				var at = getCookie("atodac");
+		        m1.innerHTML = at;
 			}
 			m2.innerHTML = "outside onload function";
         </script>
