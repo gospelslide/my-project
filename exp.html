@@ -13,35 +13,6 @@
         <h2 id="type3"></h2>
         <a href="${voltronURL}"></a>
         <script type="application/javascript">
-            window.onload = function() {
-                 try {
-                    kindle.odac.triggerDeviceRegistration("hello");
-                }
-                catch (e) {
-                    var error = document.getElementById("error");
-                    error.innerHTML = e.message;
-                }
-            }
-
-            // // var cookie = document.getElementById("cookie");
-            // var api = document.getElementById("api");
-            // var flag1 = document.getElementById("flag1");
-            // var flag2 = document.getElementById("flag2");
-            // var type = document.getElementById("type");
-            // var type1 = document.getElementById("type1");
-            // var type2 = document.getElementById("type2");
-
-            // // cookie.innerHTML = getCookieValue("atodac") + ", " + getCookieValue("atodac").length;
-            // api.innerHTML = "is device registration available - " + isDeviceRegistrationAvailable().toString();
-            // flag1.innerHTML = "inside register condition - " + isregisterAvailable;
-            // flag2.innerHTML = "inside at available - " + isatAvailable;
-            // type.innerHTML = "window.kindle - " + typeof window.kindle;
-            // if (typeof window.kindle != "undefined") {
-            //     type1.innerHTML = "window.kindle.odac - " + typeof window.kindle.odac;
-            //     if (typeof window.kindle.odac != "undefined") {
-            //         type2.innerHTML = "window.kindle.odac.trigger - " + window.kindle.odac.triggerDeviceRegistration;
-            //     }
-            // }
         </script>
     </body>
 </html>
