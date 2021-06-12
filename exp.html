@@ -30,8 +30,8 @@
     border: 1px solid black;
     border-top: 0;
     background: #fff;
-    opacity: 0;
-    visibility: hidden;
+    font-size: 40px;
+    padding: 22px 22px 22px;
 }
 .custom-select.open .custom-options {
     opacity: 1;
@@ -58,225 +58,225 @@
     <a id="top"></a>
     <div class="custom-select-wrapper">
     <div class="custom-select">
-        <div class="custom-select__trigger" id="selected-option"><span>United States</span>
+<!--         <div class="custom-select__trigger" id="selected-option"><option>United States</option>
             <div class="arrow"></div>
-        </div>
-        <div class="custom-options">
-            <span class='custom-option' data-value='Afghanistan'>Afghanistan</span>
-            <span class='custom-option' data-value='Albania'>Albania</span>
-            <span class='custom-option' data-value='Algeria'>Algeria</span>
-            <span class='custom-option' data-value='Andorra'>Andorra</span>
-            <span class='custom-option' data-value='Angola'>Angola</span>
-            <span class='custom-option' data-value='Antigua & Deps'>Antigua & Deps</span>
-            <span class='custom-option' data-value='Argentina'>Argentina</span>
-            <span class='custom-option' data-value='Armenia'>Armenia</span>
-            <span class='custom-option' data-value='Australia'>Australia</span>
-            <span class='custom-option' data-value='Austria'>Austria</span>
-            <span class='custom-option' data-value='Azerbaijan'>Azerbaijan</span>
-            <span class='custom-option' data-value='Bahamas'>Bahamas</span>
-            <span class='custom-option' data-value='Bahrain'>Bahrain</span>
-            <span class='custom-option' data-value='Bangladesh'>Bangladesh</span>
-            <span class='custom-option' data-value='Barbados'>Barbados</span>
-            <span class='custom-option' data-value='Belarus'>Belarus</span>
-            <span class='custom-option' data-value='Belgium'>Belgium</span>
-            <span class='custom-option' data-value='Belize'>Belize</span>
-            <span class='custom-option' data-value='Benin'>Benin</span>
-            <span class='custom-option' data-value='Bhutan'>Bhutan</span>
-            <span class='custom-option' data-value='Bolivia'>Bolivia</span>
-            <span class='custom-option' data-value='Bosnia Herzegovina'>Bosnia Herzegovina</span>
-            <span class='custom-option' data-value='Botswana'>Botswana</span>
-            <span class='custom-option' data-value='Brazil'>Brazil</span>
-            <span class='custom-option' data-value='Brunei'>Brunei</span>
-            <span class='custom-option' data-value='Bulgaria'>Bulgaria</span>
-            <span class='custom-option' data-value='Burkina'>Burkina</span>
-            <span class='custom-option' data-value='Burundi'>Burundi</span>
-            <span class='custom-option' data-value='Cambodia'>Cambodia</span>
-            <span class='custom-option' data-value='Cameroon'>Cameroon</span>
-            <span class='custom-option' data-value='Canada'>Canada</span>
-            <span class='custom-option' data-value='Cape Verde'>Cape Verde</span>
-            <span class='custom-option' data-value='Central African Rep'>Central African Rep</span>
-            <span class='custom-option' data-value='Chad'>Chad</span>
-            <span class='custom-option' data-value='Chile'>Chile</span>
-            <span class='custom-option' data-value='China'>China</span>
-            <span class='custom-option' data-value='Colombia'>Colombia</span>
-            <span class='custom-option' data-value='Comoros'>Comoros</span>
-            <span class='custom-option' data-value='Congo'>Congo</span>
-            <span class='custom-option' data-value='Congo {Democratic Rep}'>Congo {Democratic Rep}</span>
-            <span class='custom-option' data-value='Costa Rica'>Costa Rica</span>
-            <span class='custom-option' data-value='Croatia'>Croatia</span>
-            <span class='custom-option' data-value='Cuba'>Cuba</span>
-            <span class='custom-option' data-value='Cyprus'>Cyprus</span>
-            <span class='custom-option' data-value='Czech Republic'>Czech Republic</span>
-            <span class='custom-option' data-value='Denmark'>Denmark</span>
-            <span class='custom-option' data-value='Djibouti'>Djibouti</span>
-            <span class='custom-option' data-value='Dominica'>Dominica</span>
-            <span class='custom-option' data-value='Dominican Republic'>Dominican Republic</span>
-            <span class='custom-option' data-value='East Timor'>East Timor</span>
-            <span class='custom-option' data-value='Ecuador'>Ecuador</span>
-            <span class='custom-option' data-value='Egypt'>Egypt</span>
-            <span class='custom-option' data-value='El Salvador'>El Salvador</span>
-            <span class='custom-option' data-value='Equatorial Guinea'>Equatorial Guinea</span>
-            <span class='custom-option' data-value='Eritrea'>Eritrea</span>
-            <span class='custom-option' data-value='Estonia'>Estonia</span>
-            <span class='custom-option' data-value='Ethiopia'>Ethiopia</span>
-            <span class='custom-option' data-value='Fiji'>Fiji</span>
-            <span class='custom-option' data-value='Finland'>Finland</span>
-            <span class='custom-option' data-value='France'>France</span>
-            <span class='custom-option' data-value='Gabon'>Gabon</span>
-            <span class='custom-option' data-value='Gambia'>Gambia</span>
-            <span class='custom-option' data-value='Georgia'>Georgia</span>
-            <span class='custom-option' data-value='Germany'>Germany</span>
-            <span class='custom-option' data-value='Ghana'>Ghana</span>
-            <span class='custom-option' data-value='Greece'>Greece</span>
-            <span class='custom-option' data-value='Grenada'>Grenada</span>
-            <span class='custom-option' data-value='Guatemala'>Guatemala</span>
-            <span class='custom-option' data-value='Guinea'>Guinea</span>
-            <span class='custom-option' data-value='Guinea-Bissau'>Guinea-Bissau</span>
-            <span class='custom-option' data-value='Guyana'>Guyana</span>
-            <span class='custom-option' data-value='Haiti'>Haiti</span>
-            <span class='custom-option' data-value='Honduras'>Honduras</span>
-            <span class='custom-option' data-value='Hungary'>Hungary</span>
-            <span class='custom-option' data-value='Iceland'>Iceland</span>
-            <span class='custom-option' data-value='India'>India</span>
-            <span class='custom-option' data-value='Indonesia'>Indonesia</span>
-            <span class='custom-option' data-value='Iran'>Iran</span>
-            <span class='custom-option' data-value='Iraq'>Iraq</span>
-            <span class='custom-option' data-value='Ireland {Republic}'>Ireland {Republic}</span>
-            <span class='custom-option' data-value='Israel'>Israel</span>
-            <span class='custom-option' data-value='Italy'>Italy</span>
-            <span class='custom-option' data-value='Ivory Coast'>Ivory Coast</span>
-            <span class='custom-option' data-value='Jamaica'>Jamaica</span>
-            <span class='custom-option' data-value='Japan'>Japan</span>
-            <span class='custom-option' data-value='Jordan'>Jordan</span>
-            <span class='custom-option' data-value='Kazakhstan'>Kazakhstan</span>
-            <span class='custom-option' data-value='Kenya'>Kenya</span>
-            <span class='custom-option' data-value='Kiribati'>Kiribati</span>
-            <span class='custom-option' data-value='Korea North'>Korea North</span>
-            <span class='custom-option' data-value='Korea South'>Korea South</span>
-            <span class='custom-option' data-value='Kosovo'>Kosovo</span>
-            <span class='custom-option' data-value='Kuwait'>Kuwait</span>
-            <span class='custom-option' data-value='Kyrgyzstan'>Kyrgyzstan</span>
-            <span class='custom-option' data-value='Laos'>Laos</span>
-            <span class='custom-option' data-value='Latvia'>Latvia</span>
-            <span class='custom-option' data-value='Lebanon'>Lebanon</span>
-            <span class='custom-option' data-value='Lesotho'>Lesotho</span>
-            <span class='custom-option' data-value='Liberia'>Liberia</span>
-            <span class='custom-option' data-value='Libya'>Libya</span>
-            <span class='custom-option' data-value='Liechtenstein'>Liechtenstein</span>
-            <span class='custom-option' data-value='Lithuania'>Lithuania</span>
-            <span class='custom-option' data-value='Luxembourg'>Luxembourg</span>
-            <span class='custom-option' data-value='Macedonia'>Macedonia</span>
-            <span class='custom-option' data-value='Madagascar'>Madagascar</span>
-            <span class='custom-option' data-value='Malawi'>Malawi</span>
-            <span class='custom-option' data-value='Malaysia'>Malaysia</span>
-            <span class='custom-option' data-value='Maldives'>Maldives</span>
-            <span class='custom-option' data-value='Mali'>Mali</span>
-            <span class='custom-option' data-value='Malta'>Malta</span>
-            <span class='custom-option' data-value='Marshall Islands'>Marshall Islands</span>
-            <span class='custom-option' data-value='Mauritania'>Mauritania</span>
-            <span class='custom-option' data-value='Mauritius'>Mauritius</span>
-            <span class='custom-option' data-value='Mexico'>Mexico</span>
-            <span class='custom-option' data-value='Micronesia'>Micronesia</span>
-            <span class='custom-option' data-value='Moldova'>Moldova</span>
-            <span class='custom-option' data-value='Monaco'>Monaco</span>
-            <span class='custom-option' data-value='Mongolia'>Mongolia</span>
-            <span class='custom-option' data-value='Montenegro'>Montenegro</span>
-            <span class='custom-option' data-value='Morocco'>Morocco</span>
-            <span class='custom-option' data-value='Mozambique'>Mozambique</span>
-            <span class='custom-option' data-value='Myanmar, {Burma}'>Myanmar, {Burma}</span>
-            <span class='custom-option' data-value='Namibia'>Namibia</span>
-            <span class='custom-option' data-value='Nauru'>Nauru</span>
-            <span class='custom-option' data-value='Nepal'>Nepal</span>
-            <span class='custom-option' data-value='Netherlands'>Netherlands</span>
-            <span class='custom-option' data-value='New Zealand'>New Zealand</span>
-            <span class='custom-option' data-value='Nicaragua'>Nicaragua</span>
-            <span class='custom-option' data-value='Niger'>Niger</span>
-            <span class='custom-option' data-value='Nigeria'>Nigeria</span>
-            <span class='custom-option' data-value='Norway'>Norway</span>
-            <span class='custom-option' data-value='Oman'>Oman</span>
-            <span class='custom-option' data-value='Pakistan'>Pakistan</span>
-            <span class='custom-option' data-value='Palau'>Palau</span>
-            <span class='custom-option' data-value='Panama'>Panama</span>
-            <span class='custom-option' data-value='Papua New Guinea'>Papua New Guinea</span>
-            <span class='custom-option' data-value='Paraguay'>Paraguay</span>
-            <span class='custom-option' data-value='Peru'>Peru</span>
-            <span class='custom-option' data-value='Philippines'>Philippines</span>
-            <span class='custom-option' data-value='Poland'>Poland</span>
-            <span class='custom-option' data-value='Portugal'>Portugal</span>
-            <span class='custom-option' data-value='Qatar'>Qatar</span>
-            <span class='custom-option' data-value='Romania'>Romania</span>
-            <span class='custom-option' data-value='Russian Federation'>Russian Federation</span>
-            <span class='custom-option' data-value='Rwanda'>Rwanda</span>
-            <span class='custom-option' data-value='St Kitts & Nevis'>St Kitts & Nevis</span>
-            <span class='custom-option' data-value='St Lucia'>St Lucia</span>
-            <span class='custom-option' data-value='Saint Vincent & the Grenadines'>Saint Vincent & the Grenadines</span>
-            <span class='custom-option' data-value='Samoa'>Samoa</span>
-            <span class='custom-option' data-value='San Marino'>San Marino</span>
-            <span class='custom-option' data-value='Sao Tome & Principe'>Sao Tome & Principe</span>
-            <span class='custom-option' data-value='Saudi Arabia'>Saudi Arabia</span>
-            <span class='custom-option' data-value='Senegal'>Senegal</span>
-            <span class='custom-option' data-value='Serbia'>Serbia</span>
-            <span class='custom-option' data-value='Seychelles'>Seychelles</span>
-            <span class='custom-option' data-value='Sierra Leone'>Sierra Leone</span>
-            <span class='custom-option' data-value='Singapore'>Singapore</span>
-            <span class='custom-option' data-value='Slovakia'>Slovakia</span>
-            <span class='custom-option' data-value='Slovenia'>Slovenia</span>
-            <span class='custom-option' data-value='Solomon Islands'>Solomon Islands</span>
-            <span class='custom-option' data-value='Somalia'>Somalia</span>
-            <span class='custom-option' data-value='South Africa'>South Africa</span>
-            <span class='custom-option' data-value='South Sudan'>South Sudan</span>
-            <span class='custom-option' data-value='Spain'>Spain</span>
-            <span class='custom-option' data-value='Sri Lanka'>Sri Lanka</span>
-            <span class='custom-option' data-value='Sudan'>Sudan</span>
-            <span class='custom-option' data-value='Suriname'>Suriname</span>
-            <span class='custom-option' data-value='Swaziland'>Swaziland</span>
-            <span class='custom-option' data-value='Sweden'>Sweden</span>
-            <span class='custom-option' data-value='Switzerland'>Switzerland</span>
-            <span class='custom-option' data-value='Syria'>Syria</span>
-            <span class='custom-option' data-value='Taiwan'>Taiwan</span>
-            <span class='custom-option' data-value='Tajikistan'>Tajikistan</span>
-            <span class='custom-option' data-value='Tanzania'>Tanzania</span>
-            <span class='custom-option' data-value='Thailand'>Thailand</span>
-            <span class='custom-option' data-value='Togo'>Togo</span>
-            <span class='custom-option' data-value='Tonga'>Tonga</span>
-            <span class='custom-option' data-value='Trinidad & Tobago'>Trinidad & Tobago</span>
-            <span class='custom-option' data-value='Tunisia'>Tunisia</span>
-            <span class='custom-option' data-value='Turkey'>Turkey</span>
-            <span class='custom-option' data-value='Turkmenistan'>Turkmenistan</span>
-            <span class='custom-option' data-value='Tuvalu'>Tuvalu</span>
-            <span class='custom-option' data-value='Uganda'>Uganda</span>
-            <span class='custom-option' data-value='Ukraine'>Ukraine</span>
-            <span class='custom-option' data-value='United Arab Emirates'>United Arab Emirates</span>
-            <span class='custom-option' data-value='United Kingdom'>United Kingdom</span>
-            <span class='custom-option' data-value='United States'>United States</span>
-            <span class='custom-option' data-value='Uruguay'>Uruguay</span>
-            <span class='custom-option' data-value='Uzbekistan'>Uzbekistan</span>
-            <span class='custom-option' data-value='Vanuatu'>Vanuatu</span>
-            <span class='custom-option' data-value='Vatican City'>Vatican City</span>
-            <span class='custom-option' data-value='Venezuela'>Venezuela</span>
-            <span class='custom-option' data-value='Vietnam'>Vietnam</span>
-            <span class='custom-option' data-value='Yemen'>Yemen</span>
-            <span class='custom-option' data-value='Zambia'>Zambia</span>
-            <span class='custom-option' data-value='Zimbabwe'>Zimbabwe</span>
-        </div>
+        </div> -->
+        <select class="custom-options">
+            <option class='custom-option' data-value='Afghanistan'>Afghanistan</option>
+            <option class='custom-option' data-value='Albania'>Albania</option>
+            <option class='custom-option' data-value='Algeria'>Algeria</option>
+            <option class='custom-option' data-value='Andorra'>Andorra</option>
+            <option class='custom-option' data-value='Angola'>Angola</option>
+            <option class='custom-option' data-value='Antigua & Deps'>Antigua & Deps</option>
+            <option class='custom-option' data-value='Argentina'>Argentina</option>
+            <option class='custom-option' data-value='Armenia'>Armenia</option>
+            <option class='custom-option' data-value='Australia'>Australia</option>
+            <option class='custom-option' data-value='Austria'>Austria</option>
+            <option class='custom-option' data-value='Azerbaijan'>Azerbaijan</option>
+            <option class='custom-option' data-value='Bahamas'>Bahamas</option>
+            <option class='custom-option' data-value='Bahrain'>Bahrain</option>
+            <option class='custom-option' data-value='Bangladesh'>Bangladesh</option>
+            <option class='custom-option' data-value='Barbados'>Barbados</option>
+            <option class='custom-option' data-value='Belarus'>Belarus</option>
+            <option class='custom-option' data-value='Belgium'>Belgium</option>
+            <option class='custom-option' data-value='Belize'>Belize</option>
+            <option class='custom-option' data-value='Benin'>Benin</option>
+            <option class='custom-option' data-value='Bhutan'>Bhutan</option>
+            <option class='custom-option' data-value='Bolivia'>Bolivia</option>
+            <option class='custom-option' data-value='Bosnia Herzegovina'>Bosnia Herzegovina</option>
+            <option class='custom-option' data-value='Botswana'>Botswana</option>
+            <option class='custom-option' data-value='Brazil'>Brazil</option>
+            <option class='custom-option' data-value='Brunei'>Brunei</option>
+            <option class='custom-option' data-value='Bulgaria'>Bulgaria</option>
+            <option class='custom-option' data-value='Burkina'>Burkina</option>
+            <option class='custom-option' data-value='Burundi'>Burundi</option>
+            <option class='custom-option' data-value='Cambodia'>Cambodia</option>
+            <option class='custom-option' data-value='Cameroon'>Cameroon</option>
+            <option class='custom-option' data-value='Canada'>Canada</option>
+            <option class='custom-option' data-value='Cape Verde'>Cape Verde</option>
+            <option class='custom-option' data-value='Central African Rep'>Central African Rep</option>
+            <option class='custom-option' data-value='Chad'>Chad</option>
+            <option class='custom-option' data-value='Chile'>Chile</option>
+            <option class='custom-option' data-value='China'>China</option>
+            <option class='custom-option' data-value='Colombia'>Colombia</option>
+            <option class='custom-option' data-value='Comoros'>Comoros</option>
+            <option class='custom-option' data-value='Congo'>Congo</option>
+            <option class='custom-option' data-value='Congo {Democratic Rep}'>Congo {Democratic Rep}</option>
+            <option class='custom-option' data-value='Costa Rica'>Costa Rica</option>
+            <option class='custom-option' data-value='Croatia'>Croatia</option>
+            <option class='custom-option' data-value='Cuba'>Cuba</option>
+            <option class='custom-option' data-value='Cyprus'>Cyprus</option>
+            <option class='custom-option' data-value='Czech Republic'>Czech Republic</option>
+            <option class='custom-option' data-value='Denmark'>Denmark</option>
+            <option class='custom-option' data-value='Djibouti'>Djibouti</option>
+            <option class='custom-option' data-value='Dominica'>Dominica</option>
+            <option class='custom-option' data-value='Dominican Republic'>Dominican Republic</option>
+            <option class='custom-option' data-value='East Timor'>East Timor</option>
+            <option class='custom-option' data-value='Ecuador'>Ecuador</option>
+            <option class='custom-option' data-value='Egypt'>Egypt</option>
+            <option class='custom-option' data-value='El Salvador'>El Salvador</option>
+            <option class='custom-option' data-value='Equatorial Guinea'>Equatorial Guinea</option>
+            <option class='custom-option' data-value='Eritrea'>Eritrea</option>
+            <option class='custom-option' data-value='Estonia'>Estonia</option>
+            <option class='custom-option' data-value='Ethiopia'>Ethiopia</option>
+            <option class='custom-option' data-value='Fiji'>Fiji</option>
+            <option class='custom-option' data-value='Finland'>Finland</option>
+            <option class='custom-option' data-value='France'>France</option>
+            <option class='custom-option' data-value='Gabon'>Gabon</option>
+            <option class='custom-option' data-value='Gambia'>Gambia</option>
+            <option class='custom-option' data-value='Georgia'>Georgia</option>
+            <option class='custom-option' data-value='Germany'>Germany</option>
+            <option class='custom-option' data-value='Ghana'>Ghana</option>
+            <option class='custom-option' data-value='Greece'>Greece</option>
+            <option class='custom-option' data-value='Grenada'>Grenada</option>
+            <option class='custom-option' data-value='Guatemala'>Guatemala</option>
+            <option class='custom-option' data-value='Guinea'>Guinea</option>
+            <option class='custom-option' data-value='Guinea-Bissau'>Guinea-Bissau</option>
+            <option class='custom-option' data-value='Guyana'>Guyana</option>
+            <option class='custom-option' data-value='Haiti'>Haiti</option>
+            <option class='custom-option' data-value='Honduras'>Honduras</option>
+            <option class='custom-option' data-value='Hungary'>Hungary</option>
+            <option class='custom-option' data-value='Iceland'>Iceland</option>
+            <option class='custom-option' data-value='India'>India</option>
+            <option class='custom-option' data-value='Indonesia'>Indonesia</option>
+            <option class='custom-option' data-value='Iran'>Iran</option>
+            <option class='custom-option' data-value='Iraq'>Iraq</option>
+            <option class='custom-option' data-value='Ireland {Republic}'>Ireland {Republic}</option>
+            <option class='custom-option' data-value='Israel'>Israel</option>
+            <option class='custom-option' data-value='Italy'>Italy</option>
+            <option class='custom-option' data-value='Ivory Coast'>Ivory Coast</option>
+            <option class='custom-option' data-value='Jamaica'>Jamaica</option>
+            <option class='custom-option' data-value='Japan'>Japan</option>
+            <option class='custom-option' data-value='Jordan'>Jordan</option>
+            <option class='custom-option' data-value='Kazakhstan'>Kazakhstan</option>
+            <option class='custom-option' data-value='Kenya'>Kenya</option>
+            <option class='custom-option' data-value='Kiribati'>Kiribati</option>
+            <option class='custom-option' data-value='Korea North'>Korea North</option>
+            <option class='custom-option' data-value='Korea South'>Korea South</option>
+            <option class='custom-option' data-value='Kosovo'>Kosovo</option>
+            <option class='custom-option' data-value='Kuwait'>Kuwait</option>
+            <option class='custom-option' data-value='Kyrgyzstan'>Kyrgyzstan</option>
+            <option class='custom-option' data-value='Laos'>Laos</option>
+            <option class='custom-option' data-value='Latvia'>Latvia</option>
+            <option class='custom-option' data-value='Lebanon'>Lebanon</option>
+            <option class='custom-option' data-value='Lesotho'>Lesotho</option>
+            <option class='custom-option' data-value='Liberia'>Liberia</option>
+            <option class='custom-option' data-value='Libya'>Libya</option>
+            <option class='custom-option' data-value='Liechtenstein'>Liechtenstein</option>
+            <option class='custom-option' data-value='Lithuania'>Lithuania</option>
+            <option class='custom-option' data-value='Luxembourg'>Luxembourg</option>
+            <option class='custom-option' data-value='Macedonia'>Macedonia</option>
+            <option class='custom-option' data-value='Madagascar'>Madagascar</option>
+            <option class='custom-option' data-value='Malawi'>Malawi</option>
+            <option class='custom-option' data-value='Malaysia'>Malaysia</option>
+            <option class='custom-option' data-value='Maldives'>Maldives</option>
+            <option class='custom-option' data-value='Mali'>Mali</option>
+            <option class='custom-option' data-value='Malta'>Malta</option>
+            <option class='custom-option' data-value='Marshall Islands'>Marshall Islands</option>
+            <option class='custom-option' data-value='Mauritania'>Mauritania</option>
+            <option class='custom-option' data-value='Mauritius'>Mauritius</option>
+            <option class='custom-option' data-value='Mexico'>Mexico</option>
+            <option class='custom-option' data-value='Micronesia'>Micronesia</option>
+            <option class='custom-option' data-value='Moldova'>Moldova</option>
+            <option class='custom-option' data-value='Monaco'>Monaco</option>
+            <option class='custom-option' data-value='Mongolia'>Mongolia</option>
+            <option class='custom-option' data-value='Montenegro'>Montenegro</option>
+            <option class='custom-option' data-value='Morocco'>Morocco</option>
+            <option class='custom-option' data-value='Mozambique'>Mozambique</option>
+            <option class='custom-option' data-value='Myanmar, {Burma}'>Myanmar, {Burma}</option>
+            <option class='custom-option' data-value='Namibia'>Namibia</option>
+            <option class='custom-option' data-value='Nauru'>Nauru</option>
+            <option class='custom-option' data-value='Nepal'>Nepal</option>
+            <option class='custom-option' data-value='Netherlands'>Netherlands</option>
+            <option class='custom-option' data-value='New Zealand'>New Zealand</option>
+            <option class='custom-option' data-value='Nicaragua'>Nicaragua</option>
+            <option class='custom-option' data-value='Niger'>Niger</option>
+            <option class='custom-option' data-value='Nigeria'>Nigeria</option>
+            <option class='custom-option' data-value='Norway'>Norway</option>
+            <option class='custom-option' data-value='Oman'>Oman</option>
+            <option class='custom-option' data-value='Pakistan'>Pakistan</option>
+            <option class='custom-option' data-value='Palau'>Palau</option>
+            <option class='custom-option' data-value='Panama'>Panama</option>
+            <option class='custom-option' data-value='Papua New Guinea'>Papua New Guinea</option>
+            <option class='custom-option' data-value='Paraguay'>Paraguay</option>
+            <option class='custom-option' data-value='Peru'>Peru</option>
+            <option class='custom-option' data-value='Philippines'>Philippines</option>
+            <option class='custom-option' data-value='Poland'>Poland</option>
+            <option class='custom-option' data-value='Portugal'>Portugal</option>
+            <option class='custom-option' data-value='Qatar'>Qatar</option>
+            <option class='custom-option' data-value='Romania'>Romania</option>
+            <option class='custom-option' data-value='Russian Federation'>Russian Federation</option>
+            <option class='custom-option' data-value='Rwanda'>Rwanda</option>
+            <option class='custom-option' data-value='St Kitts & Nevis'>St Kitts & Nevis</option>
+            <option class='custom-option' data-value='St Lucia'>St Lucia</option>
+            <option class='custom-option' data-value='Saint Vincent & the Grenadines'>Saint Vincent & the Grenadines</option>
+            <option class='custom-option' data-value='Samoa'>Samoa</option>
+            <option class='custom-option' data-value='San Marino'>San Marino</option>
+            <option class='custom-option' data-value='Sao Tome & Principe'>Sao Tome & Principe</option>
+            <option class='custom-option' data-value='Saudi Arabia'>Saudi Arabia</option>
+            <option class='custom-option' data-value='Senegal'>Senegal</option>
+            <option class='custom-option' data-value='Serbia'>Serbia</option>
+            <option class='custom-option' data-value='Seychelles'>Seychelles</option>
+            <option class='custom-option' data-value='Sierra Leone'>Sierra Leone</option>
+            <option class='custom-option' data-value='Singapore'>Singapore</option>
+            <option class='custom-option' data-value='Slovakia'>Slovakia</option>
+            <option class='custom-option' data-value='Slovenia'>Slovenia</option>
+            <option class='custom-option' data-value='Solomon Islands'>Solomon Islands</option>
+            <option class='custom-option' data-value='Somalia'>Somalia</option>
+            <option class='custom-option' data-value='South Africa'>South Africa</option>
+            <option class='custom-option' data-value='South Sudan'>South Sudan</option>
+            <option class='custom-option' data-value='Spain'>Spain</option>
+            <option class='custom-option' data-value='Sri Lanka'>Sri Lanka</option>
+            <option class='custom-option' data-value='Sudan'>Sudan</option>
+            <option class='custom-option' data-value='Suriname'>Suriname</option>
+            <option class='custom-option' data-value='Swaziland'>Swaziland</option>
+            <option class='custom-option' data-value='Sweden'>Sweden</option>
+            <option class='custom-option' data-value='Switzerland'>Switzerland</option>
+            <option class='custom-option' data-value='Syria'>Syria</option>
+            <option class='custom-option' data-value='Taiwan'>Taiwan</option>
+            <option class='custom-option' data-value='Tajikistan'>Tajikistan</option>
+            <option class='custom-option' data-value='Tanzania'>Tanzania</option>
+            <option class='custom-option' data-value='Thailand'>Thailand</option>
+            <option class='custom-option' data-value='Togo'>Togo</option>
+            <option class='custom-option' data-value='Tonga'>Tonga</option>
+            <option class='custom-option' data-value='Trinidad & Tobago'>Trinidad & Tobago</option>
+            <option class='custom-option' data-value='Tunisia'>Tunisia</option>
+            <option class='custom-option' data-value='Turkey'>Turkey</option>
+            <option class='custom-option' data-value='Turkmenistan'>Turkmenistan</option>
+            <option class='custom-option' data-value='Tuvalu'>Tuvalu</option>
+            <option class='custom-option' data-value='Uganda'>Uganda</option>
+            <option class='custom-option' data-value='Ukraine'>Ukraine</option>
+            <option class='custom-option' data-value='United Arab Emirates'>United Arab Emirates</option>
+            <option class='custom-option' data-value='United Kingdom'>United Kingdom</option>
+            <option class='custom-option' data-value='United States'>United States</option>
+            <option class='custom-option' data-value='Uruguay'>Uruguay</option>
+            <option class='custom-option' data-value='Uzbekistan'>Uzbekistan</option>
+            <option class='custom-option' data-value='Vanuatu'>Vanuatu</option>
+            <option class='custom-option' data-value='Vatican City'>Vatican City</option>
+            <option class='custom-option' data-value='Venezuela'>Venezuela</option>
+            <option class='custom-option' data-value='Vietnam'>Vietnam</option>
+            <option class='custom-option' data-value='Yemen'>Yemen</option>
+            <option class='custom-option' data-value='Zambia'>Zambia</option>
+            <option class='custom-option' data-value='Zimbabwe'>Zimbabwe</option>
+        </select>
     </div>
 </div>
 <script type="text/javascript">
-document.querySelector('.custom-select-wrapper').addEventListener('click', function() {
-    this.querySelector('.custom-select').classList.toggle('open');
-})
-var options = document.getElementsByClassName("custom-option")
-for (var i = 0; i < options.length; i++) {
-    options[i].addEventListener('click', function() {
-        if (!this.classList.contains('selected')) {
-            var selectedOption = document.getElementsByClassName("custom-option selected");
-            if (selectedOption.length > 0) { selectedOption[0].classList.remove('selected'); } 
-            this.classList.add('selected');
-            document.getElementById('selected-option').innerHTML = this.innerHTML;
-        }
-        window.location.href = "#top";
-    });
-}
+// document.querySelector('.custom-select-wrapper').addEventListener('click', function() {
+//     this.querySelector('.custom-select').classList.toggle('open');
+// })
+// var options = document.getElementsByClassName("custom-option")
+// for (var i = 0; i < options.length; i++) {
+//     options[i].addEventListener('click', function() {
+//         if (!this.classList.contains('selected')) {
+//             var selectedOption = document.getElementsByClassName("custom-option selected");
+//             if (selectedOption.length > 0) { selectedOption[0].classList.remove('selected'); } 
+//             this.classList.add('selected');
+//             document.getElementById('selected-option').innerHTML = this.innerHTML;
+//         }
+//         window.location.href = "#top";
+//     });
+// }
 // for (var option of document.querySelectorAll(".custom-option")) {
     // option.addEventListener('click', function() {
         // if (!this.classList.contains('selected')) {
