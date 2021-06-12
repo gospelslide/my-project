@@ -273,7 +273,12 @@ for (var i = 0; i < options.length; i++) {
             this.classList.add('selected');
             document.getElementById('selected-option').innerHTML = this.innerHTML;
         }
+        goToTop();
     });
+}
+function goToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
 // for (var option of document.querySelectorAll(".custom-option")) {
     // option.addEventListener('click', function() {
