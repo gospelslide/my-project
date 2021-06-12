@@ -55,6 +55,7 @@
 </style>
 </head>
 <body>
+    <a id="top"></a>
     <div class="custom-select-wrapper">
     <div class="custom-select">
         <div class="custom-select__trigger" id="selected-option"><span>United States</span>
@@ -273,12 +274,8 @@ for (var i = 0; i < options.length; i++) {
             this.classList.add('selected');
             document.getElementById('selected-option').innerHTML = this.innerHTML;
         }
-        goToTop();
+        window.location.href = "#top";
     });
-}
-function goToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
 }
 // for (var option of document.querySelectorAll(".custom-option")) {
     // option.addEventListener('click', function() {
