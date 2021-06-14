@@ -47,7 +47,7 @@ li {
 </head>
 <body>
 <h2>Modal Example</h2>
-
+<h2 id="mssg"></h2>
 <button id="myBtn">Open Modal</button>
 <div id="myModal" class="modal">
 	<div class="modal-content">
@@ -278,13 +278,18 @@ window.onclick = function(event) {
 	document.getElementById("myModal").style.display = "none";
 }
 
-swipeHandler.onSwipe =  function(direction, x, y) {
+var onSwipe = function(direction, x, y) {
     var element = document.elementFromPoint(x, y);
     jQuery(element).trigger('swipe' + direction);
 };
 
 if(kindle) {
-    kindle.gestures.onswipe = swipeHandler.onSwipe;
+    kindle.gestures.onswipe = onSwipe;
+}
+window.onload = function() {
+	var mssg = document.getElementById('mssg');
+	var isAvailable = !!kindle.gestures.onswipe;
+	mssg.innerHTML = isAvailable;
 }
 </script>
 </body>
