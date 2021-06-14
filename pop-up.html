@@ -277,22 +277,23 @@ btn.onclick = function() {
 // }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-	document.getElementById("myModal").style.display = "none";
-}
+// window.onclick = function(event) {
+// 	document.getElementById("myModal").style.display = "none";
+// }
 
 var onSwipe = function(direction, x, y) {
     var element = document.elementFromPoint(x, y);
     jQuery(element).trigger('swipe' + direction);
-};
 
-// if(kindle) {
-//     kindle.gestures.onswipe = onSwipe;
-// }
-window.onload = function() {
 	var mssg = document.getElementById('mssg');
 	var isAvailable = (typeof kindle.gestures.onswipe != "undefined") ? "available" : "not available";
 	mssg.innerHTML = "hello";
+};
+
+window.onload = function() {
+	if(kindle) {
+    	kindle.gestures.onswipe = onSwipe;
+	}
 }
 </script>
 </body>
