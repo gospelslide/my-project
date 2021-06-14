@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
+	<script src="https://code.jquery.com/jquery-1.5.1.min.js" integrity="sha256-dkuenzrThqqlzerpNoNTmU3mHAvt4IfI9+NXnLRD3js=" crossorigin="anonymous"></script>
 <style type="text/css">
 .modal {
 	display: none;
@@ -275,6 +276,15 @@ span.onclick = function() {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
 	document.getElementById("myModal").style.display = "none";
+}
+
+swipeHandler.onSwipe =  function(direction, x, y) {
+    var element = document.elementFromPoint(x, y);
+    jQuery(element).trigger('swipe' + direction);
+};
+
+if(kindle) {
+    kindle.gestures.onswipe = swipeHandler.onSwipe;
 }
 </script>
 </body>
