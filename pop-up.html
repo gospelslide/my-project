@@ -284,15 +284,13 @@ btn.onclick = function() {
 var onSwipe = function(direction, x, y) {
     var element = document.elementFromPoint(x, y);
     jQuery(element).trigger('swipe' + direction);
-
-	var mssg = document.getElementById('mssg');
-	var isAvailable = (typeof kindle.gestures.onswipe != "undefined") ? "available" : "not available";
-	mssg.innerHTML = "hello";
 };
 
 window.onload = function() {
 	if(kindle) {
     	kindle.gestures.onswipe = onSwipe;
+		var mssg = document.getElementById('mssg');
+		mssg.innerHTML = "hello";
 	}
 }
 </script>
