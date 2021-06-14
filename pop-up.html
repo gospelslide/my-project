@@ -283,14 +283,14 @@ btn.onclick = function() {
 
 var onSwipe = function(direction, x, y) {
     var element = document.elementFromPoint(x, y);
+	var mssg = document.getElementById('mssg');
+	mssg.innerHTML = direction + " " + x + " " + y;
     jQuery(element).trigger('swipe' + direction);
 };
 
 window.onload = function() {
 	if(kindle) {
     	kindle.gestures.onswipe = onSwipe;
-		var mssg = document.getElementById('mssg');
-		mssg.innerHTML = "hello";
 	}
 }
 </script>
