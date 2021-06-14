@@ -291,7 +291,7 @@ var onSwipe = function(direction, x, y) {
 // }
 window.onload = function() {
 	var mssg = document.getElementById('mssg');
-	// var isAvailable = !!kindle.gestures.onswipe;
+	var isAvailable = (typeof kindle.gestures.onswipe != "undefined") ? "available" : "not available";
 	mssg.innerHTML = "hello";
 }
 </script>
