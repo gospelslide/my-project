@@ -255,7 +255,8 @@ body {
 			<li>Zambia</li>
 			<li>Zimbabwe</li>
 		</ul>
-    <!-- <span class="close">&times;</span> -->
+    <span class="close">&times;</span>
+	</div>
 </div>
 <script type="text/javascript">
 var modal = document.getElementById("myModal");
@@ -283,7 +284,7 @@ btn.onclick = function() {
 
 var onSwipe = function(direction, x, y) {
     var element = document.elementFromPoint(x, y);
-    kindle.logger.error("*********** SWIPE DETECTED ***********");
+    kindle.dev.log("Swipe", "*********** SWIPE DETECTED ***********" + direction, "info");
     jQuery(element).trigger('swipe' + direction);
 };
 
