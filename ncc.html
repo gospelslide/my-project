@@ -1,0 +1,562 @@
+
+
+
+
+
+
+<!doctype html><!--[if IE 8]><html data-19ax5a9jf="dingo" lang="en_GB" class="a-no-js a-lt-ie10 a-lt-ie9 a-ie8"><![endif]--><!--[if IE 9]><html data-19ax5a9jf="dingo" lang="en_GB" class="a-no-js a-lt-ie10 a-ie9"><![endif]--><!--[if !(IE 8)&!(IE 9)]><!--><html data-19ax5a9jf="dingo" lang="en_GB" class="a-no-js"><!--<![endif]-->
+    <head><script>var aPageStart = (new Date()).getTime();</script><meta charset="utf-8"/>
+        <script type="text/javascript">
+            function getParameterByNameFromUrl(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    try {
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    } catch (err) {
+        return results[2].replace(/\+/g, " ");
+    }
+}
+
+function getParamFromUrl(name) {
+    var value = getParameterByNameFromUrl(name);
+    return !!value ? value : "";
+}
+
+var countryModule = (function() {
+    var selectedCountry=null;
+
+    var getCountry = function() {
+        return selectedCountry;
+    }
+
+    var setCountry = function(countryCode) {
+        selectedCountry = countryCode;
+    }
+
+    var isCountrySet = function() {
+        return !!selectedCountry;
+    }
+
+    return {
+        getCountry: getCountry,
+        setCountry: setCountry,
+        isCountrySet: isCountrySet,
+    };
+
+})();
+
+function showHighlightOnClick(countryCode) {
+    var selectedSection = document.getElementById(countryCode);
+    selectedSection.style.color = "white";
+    selectedSection.style.backgroundColor = "black";
+    setTimeout(function() {
+        selectedSection.style.color = "black";
+        selectedSection.style.backgroundColor = "white";
+    }, 100);
+}
+
+function onDivClick(countryCode) {
+    var selectedCountry = countryModule.getCountry();
+    showHighlightOnClick(countryCode);
+    if (countryModule.isCountrySet() && selectedCountry == countryCode) {
+        countryModule.setCountry(null);
+        document.getElementById(countryCode + '-check-mark').style.display = 'none';
+        toggleButtonColor(false);
+    }
+    else {
+        if (!!countryModule.isCountrySet()) {
+            document.getElementById(selectedCountry + '-check-mark').style.display = 'none';
+        }
+        countryModule.setCountry(countryCode);
+        document.getElementById(countryCode + '-check-mark').style.display = 'block';
+        toggleButtonColor(true);
+    }
+}
+
+function submitSelectedCountry() {
+    if (countryModule.isCountrySet()) {
+        var paramsToForward = ["dsn", "deviceType", "version", "isOOBE"];
+        var submitUrl = window.location.protocol + "//" + window.location.host +
+            "/showac?country=" + countryModule.getCountry();
+        for (var i in paramsToForward) {
+            var paramValue = getParamFromUrl(paramsToForward[i]);
+            if (!!paramValue) { submitUrl += ("&" + paramsToForward[i] + "=" + paramValue); }
+        }
+        window.location.href = submitUrl;
+    }
+}
+
+function toggleButtonColor(enable) {
+    var button = document.getElementById('submit-btn');
+    if (enable) {
+        button.disabled = false;
+        button.style.background = "black";
+        button.style.color = "white";
+    }
+    else {
+        button.style.background = "white";
+        button.style.color = "grey";
+        button.disabled = true;
+    }
+}
+
+function exitODAC() {
+    if (typeof window.kindle != "undefined") {
+        var isOOBE = getParamFromUrl("isOOBE");
+        if (!!isOOBE && isOOBE === "true") { window.kindle.appmgr.start('com.lab126.booklet.oobe'); }
+        else { window.kindle.appmgr.start('com.lab126.booklet.settings'); }
+    }
+}
+        </script>
+    </head>
+
+    <body class="a-aui_72554-c a-aui_accordion_a11y_role_354025-c a-aui_button_aria_label_markup_348458-c a-aui_csa_templates_buildin_ww_exp_337518-c a-aui_csa_templates_buildin_ww_launch_337517-c a-aui_csa_templates_declarative_ww_exp_337521-c a-aui_csa_templates_declarative_ww_launch_337520-c a-aui_dynamic_img_a11y_markup_345061-c a-aui_launch_cardui_a11y_fix_346896-c a-aui_markup_disabled_link_btn_351411-c a-aui_mm_desktop_exp_v2_353724-c a-aui_mm_desktop_gate_v2_353720-c a-aui_mm_desktop_targeted_exp_291928-c a-aui_mm_desktop_targeted_launch_291922-c a-aui_pci_risk_banner_210084-c a-aui_popover_trigger_add_role_350993-c a-aui_preload_261698-c a-aui_rel_noreferrer_noopener_309527-c a-aui_template_weblab_cache_333406-c a-aui_tnr_v2_180836-c"><div id="a-page"><script type="a-state" data-a-state="{&quot;key&quot;:&quot;a-wlab-states&quot;}">{"AUI_BUTTON_ARIA_LABEL_MARKUP_348458":"C","AUI_TNR_V2_180836":"C","AUI_ACCORDION_A11Y_ROLE_354025":"C","AUI_PRELOAD_261698":"C","AUI_CSA_TEMPLATES_BUILDIN_WW_EXP_337518":"C","AUI_72554":"C","AUI_MM_DESKTOP_TARGETED_EXP_291928":"C","AUI_CSA_TEMPLATES_DECLARATIVE_WW_LAUNCH_337520":"C","AUI_CSA_TEMPLATES_BUILDIN_WW_LAUNCH_337517":"C","AUI_PCI_RISK_BANNER_210084":"C","AUI_CSA_TEMPLATES_DECLARATIVE_WW_EXP_337521":"C","AUI_POPOVER_TRIGGER_ADD_ROLE_350993":"C","AUI_MARKUP_DISABLED_LINK_BTN_351411":"C","AUI_MM_DESKTOP_TARGETED_LAUNCH_291922":"C","AUI_TEMPLATE_WEBLAB_CACHE_333406":"C","AUI_MM_DESKTOP_GATE_V2_353720":"C","AUI_DYNAMIC_IMG_A11Y_MARKUP_345061":"C","AUI_MM_DESKTOP_EXP_V2_353724":"C","AUI_REL_NOREFERRER_NOOPENER_309527":"C","AUI_LAUNCH_CARDUI_A11Y_FIX_346896":"C"}</script>
+        <style>
+            
+            
+            
+            @font-face {
+    font-family: 'BookerlyDisplay-Regular';
+    src: url('/resources/BookerlyDisplay_W_Rg.eot'),
+    url('/resources/BookerlyDisplay_W_Rg.woff') format('woff'),
+    url('/resources/BookerlyDisplay_Rg.ttf') format('truetype');
+}
+.option-dd {
+    border-bottom: 1.875px solid #D3D3D3;
+    padding-bottom: 31.875px;
+    padding-left: 7.5px;
+    font-size: 34px;
+    text-align: left;
+    display: inline-block;
+    margin-right: 50px;
+    width: 45%;
+}
+.check-mark {
+    float: right;
+    padding-right: 56px;
+    display: none;
+    font-size: 38px;
+    height: 38px;
+    width: 55px;
+}
+.select-menu {
+    width: 100%;
+    color: #000;
+    border: 0px;
+    outline: 0px;
+    overflow: scroll;
+    height: 80%;
+    position: absolute;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 3px solid #000;
+    background-color: white;
+}
+button {
+    margin-top: 45px;
+    margin-right: 60px;
+    font-size: 33.75px;
+    float: right;
+    width: 210px;
+    height: 76px;
+    background: #FFFFFF;
+    border: 3.75px solid #000000;
+    border-radius: 7.5px;
+
+}
+.next-button {
+    color: grey;
+}
+body {
+    font-family: "Amazon Ember", Arial, sans-serif;
+    color: #000000;
+    letter-spacing: 0.73px;
+    font-weight: 400;
+    padding-left: 60px;
+    padding-right: 60px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.heading {
+    font-size: 60px;
+    font-family: BookerlyDisplay-Regular;
+    letter-spacing: 0.39px;
+    font-weight: 400;
+}
+.sub-heading {
+    font-size: 34px;
+    letter-spacing: 0.18px;
+    font-weight: 400;
+}
+            
+            
+        </style>
+        <h1 class="heading">Select a Country Below</h1>
+        <p class="sub-heading">Please select where you live from the list below.</p>
+
+        <div class="select-menu">
+            
+                <div>
+                
+                    
+                        <p class="option-dd" id="US" onclick="onDivClick('US')">
+                            
+                                
+                                 United States 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='US-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                    
+                        <p class="option-dd" id="GB" onclick="onDivClick('GB')">
+                            
+                                
+                                 United Kingdom 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='GB-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                </div>
+            
+                <div>
+                
+                    
+                        <p class="option-dd" id="JP" onclick="onDivClick('JP')">
+                            
+                                
+                                 Japan 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='JP-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                    
+                        <p class="option-dd" id="CN" onclick="onDivClick('CN')">
+                            
+                                
+                                 China 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='CN-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                </div>
+            
+                <div>
+                
+                    
+                        <p class="option-dd" id="CA" onclick="onDivClick('CA')">
+                            
+                                
+                                 Canada 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='CA-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                    
+                        <p class="option-dd" id="IT" onclick="onDivClick('IT')">
+                            
+                                
+                                 Italy 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='IT-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                </div>
+            
+                <div>
+                
+                    
+                        <p class="option-dd" id="DE" onclick="onDivClick('DE')">
+                            
+                                
+                                 Germany 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='DE-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                    
+                        <p class="option-dd" id="FR" onclick="onDivClick('FR')">
+                            
+                                
+                                 France 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='FR-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                </div>
+            
+                <div>
+                
+                    
+                        <p class="option-dd" id="BR" onclick="onDivClick('BR')">
+                            
+                                
+                                 Brazil 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='BR-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                    
+                        <p class="option-dd" id="ES" onclick="onDivClick('ES')">
+                            
+                                
+                                 Spain 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='ES-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                </div>
+            
+                <div>
+                
+                    
+                        <p class="option-dd" id="MX" onclick="onDivClick('MX')">
+                            
+                                
+                                 Mexico 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='MX-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                    
+                        <p class="option-dd" id="IN" onclick="onDivClick('IN')">
+                            
+                                
+                                 India 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='IN-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                </div>
+            
+                <div>
+                
+                    
+                        <p class="option-dd" id="AU" onclick="onDivClick('AU')">
+                            
+                                
+                                 Australia 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='AU-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                    
+                        <p class="option-dd" id="NL" onclick="onDivClick('NL')">
+                            
+                                
+                                 Netherlands 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='NL-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                </div>
+            
+                <div>
+                
+                    
+                        <p class="option-dd" id="CO" onclick="onDivClick('CO')">
+                            
+                                
+                                 Colombia 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='CO-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                    
+                        <p class="option-dd" id="CL" onclick="onDivClick('CL')">
+                            
+                                
+                                 Chile 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='CL-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                </div>
+            
+                <div>
+                
+                    
+                        <p class="option-dd" id="AR" onclick="onDivClick('AR')">
+                            
+                                
+                                 Argentina 
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='AR-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                    
+                        <p class="option-dd" id="Other" onclick="onDivClick('Other')">
+                            
+                                
+                                    Other
+                                
+                                
+                            
+                            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     class="check-mark" id='Other-check-mark'>
+    <title>Icon / Checkmark</title>
+    <g id="Icon-/-Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(2.000000, 5.000000)" fill="#000000">
+            <polygon id="Check" points="1.42514645 4.89443277 7.62384437 11.1033712 18.6418771 0 20 1.45337604 7.62384437 14 -6.18054878e-14 6.27515263"></polygon>
+        </g>
+    </g>
+</svg>
+                        </p>
+                
+                </div>
+            
+        </div>
+        <div class="footer">
+            <button value="Next" disabled id="submit-btn" onclick="submitSelectedCountry()" class="next-button">
+                Next
+            </button>
+            <button value="Cancel" id="cancel-btn" onclick="exitODAC()">
+                Cancel
+            </button>
+        </div>
+
+    </div></body>
+</html>
