@@ -6,27 +6,11 @@
         <h2 id="message2"></h2>
         <h3 id="message3"></h3>
         <h3 id="error"></h3>
-        <h4><a href="${voltronURL}">Click here to go to next page</a></h4>
         <script type="application/javascript">
-			function getCookie(name) {
-				var nameEQ = name + "=";
-				var ca = document.cookie.split(';');
-				for(var i=0;i < ca.length;i++) {
-					var c = ca[i];
-					while (c.charAt(0)==' ') c = c.substring(1,c.length);
-					if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-				}
-				return null;
-			}
 			var m1 = document.getElementById("message1");
 			var m2 = document.getElementById("message2");
 			var m3 = document.getElementById("message3");
-			window.onload = function() {
-				var at = getCookie("atodac");
-		        m1.innerHTML = at;
-		        window.kindle.odac.triggerDeviceRegistration(at);
-			}
-			m2.innerHTML = "outside onload function";
+			m1.innerHTML = screen.width + "x" + screen.height;
         </script>
     </body>
 </html>
