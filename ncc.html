@@ -157,7 +157,7 @@ function exitODAC() {
     width: 100%;
     background-color: white;
 }
-button {
+.custom-button {
     margin-top: 24px;
     margin-right: 32px;
     font-size: 18px;
@@ -547,12 +547,8 @@ body {
             
         </div>
         <div class="footer">
-            <button value="Next" disabled id="submit-btn" onclick="submitSelectedCountry()" class="next-button">
-                Next
-            </button>
-            <button value="Cancel" id="cancel-btn" onclick="exitODAC()">
-                Cancel
-            </button>
+            <input type="button" value="Next" disabled id="submit-btn" onclick="submitSelectedCountry()" class="next-button custom-button">
+            <input type="button" value="Cancel" id="cancel-btn" onclick="exitODAC()" class="custom-button">
         </div>
 
     </div></body>
