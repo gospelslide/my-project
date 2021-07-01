@@ -36,6 +36,18 @@
     
 </style>
 <body>
-    <input type="button" value="Next" id="submit-btn" onclick="submitSelectedCountry()" class="custom-button">
-    <input type="button" value="Cancel" id="cancel-btn" onclick="exitODAC()" class="custom-button"></body>
+    <input type="button" value="Next" id="submit-btn" onclick="darkButtonXOR()" class="custom-button">
+    <input type="button" value="Cancel" id="cancel-btn" onclick="" class="custom-button">
+    <script type="application/javascript">
+        function darkButtonXOR() {
+            var nextButton = document.getElementById("submit-btn");
+            nextButton.style.background = "white";
+            nextButton.style.color = "black";
+            setTimeout(function() {
+                nextButton.style.background = "black";
+                nextButton.style.color = "white";
+            }, 200);
+        }
+    </script>
+</body>
 </html>
