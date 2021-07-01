@@ -10,44 +10,26 @@
 
 <style>
 
-.custom-button {
-    /* Gurupa ODAC */
-    /*font-weight: bold;*/
-    color: #ffffff;
-    background: #000000;
-    font-size: 32.66px;
-    border-radius: 14.2px;
-    border: 1.42px solid #000000;
-
-    /* Horizonte ODAC */
-    width: 210px;
-    height: 76px;
-    font-family: "Amazon Ember", Arial, sans-serif;
+button {
+    /*margin-top: 24px;*/
+    margin-right: 32px;
+    font-size: 18px;
     float: right;
-    margin-right: 60px;
+    width: 112px;
+    height: 46px;
+    background: #000000;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    color: white;
 }
-.next-button {
-    color: grey;
+button:active {
+    color: black;
+    background: white;
 }
-* {
-    outline: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-    
+
 </style>
 <body>
-    <input type="button" value="Next" id="submit-btn" onclick="darkButtonXOR()" class="custom-button xorItem">
-    <input type="button" value="Cancel" id="cancel-btn" onclick="" class="custom-button xorItem">
-    <script type="application/javascript">
-        function darkButtonXOR() {
-            var nextButton = document.getElementById("submit-btn");
-            nextButton.style.background = "white";
-            nextButton.style.color = "black";
-            setTimeout(function() {
-                nextButton.style.background = "black";
-                nextButton.style.color = "white";
-            }, 500);
-        }
-    </script>
+    <button value="Next" id="submit-btn" onclick="" class="custom-button">Next</button>
+    <button value="Cancel" id="cancel-btn" onclick="" class="custom-button">Cancel</button>
 </body>
 </html>
