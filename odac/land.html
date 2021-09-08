@@ -1,0 +1,219 @@
+
+
+
+
+
+<!doctype html><!--[if IE 8]><html data-19ax5a9jf="dingo" lang="en_US" class="a-no-js a-lt-ie10 a-lt-ie9 a-ie8"><![endif]--><!--[if IE 9]><html data-19ax5a9jf="dingo" lang="en_US" class="a-no-js a-lt-ie10 a-ie9"><![endif]--><!--[if !(IE 8)&!(IE 9)]><!--><html data-19ax5a9jf="dingo" lang="en_US" class="a-no-js"><!--<![endif]-->
+<head><script>var aPageStart = (new Date()).getTime();</script><meta charset="utf-8"/>
+    
+    <script type="text/javascript">
+        function getParameterByNameFromUrl(name, url) {
+if (!url) url = window.location.href;
+name = name.replace(/[\[\]]/g, "\$&");
+var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
+    results = regex.exec(url);
+if (!results) return null;
+if (!results[2]) return '';
+try {
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+} catch (err) {
+    return results[2].replace(/\+/g, " ");
+}
+}
+
+function getParamFromUrl(name) {
+var value = getParameterByNameFromUrl(name);
+return !!value ? value : "";
+}
+
+var countryModule = (function() {
+var selectedCountry=null;
+
+var getCountry = function() {
+    return selectedCountry;
+}
+
+var setCountry = function(countryCode) {
+    selectedCountry = countryCode;
+}
+
+var isCountrySet = function() {
+    return !!selectedCountry;
+}
+
+return {
+    getCountry: getCountry,
+    setCountry: setCountry,
+    isCountrySet: isCountrySet,
+};
+
+})();
+
+function showHighlightOnClick(countryCode) {
+var selectedSection = document.getElementById(countryCode);
+selectedSection.style.color = "white";
+selectedSection.style.backgroundColor = "black";
+setTimeout(function() {
+    selectedSection.style.color = "black";
+    selectedSection.style.backgroundColor = "white";
+}, 100);
+}
+
+function onDivClick(countryCode) {
+var selectedCountry = countryModule.getCountry();
+showHighlightOnClick(countryCode);
+if (countryModule.isCountrySet() && selectedCountry == countryCode) {
+    countryModule.setCountry(null);
+    document.getElementById(countryCode + '-check-mark').style.display = 'none';
+    toggleButtonColor(false);
+}
+else {
+    if (!!countryModule.isCountrySet()) {
+        document.getElementById(selectedCountry + '-check-mark').style.display = 'none';
+    }
+    countryModule.setCountry(countryCode);
+    document.getElementById(countryCode + '-check-mark').style.display = 'block';
+    toggleButtonColor(true);
+}
+}
+
+function submitSelectedCountry() {
+// if (countryModule.isCountrySet()) {
+    toggleButtonColor(false);
+    var paramsToForward = ["dsn", "deviceType", "isOOBE"];
+    var submitUrl = "/odac/ac.html?country=" + countryModule.getCountry();
+    for (var i in paramsToForward) {
+        var paramValue = getParamFromUrl(paramsToForward[i]);
+        if (!!paramValue) { submitUrl += ("&" + paramsToForward[i] + "=" + paramValue); }
+    }
+    redirectPage(submitUrl);
+// }
+}
+
+function toggleButtonColor(enable) {
+var button = document.getElementById('submit-btn');
+if (enable) {
+    button.disabled = false;
+    button.style.background = "black";
+    button.style.color = "white";
+}
+else {
+    button.style.background = "white";
+    button.style.color = "grey";
+    button.disabled = true;
+}
+}
+
+function exitODAC() {
+redirectPage("/odac/cancel.html?source=country-page");
+}
+
+function redirectPage(url) {
+if (typeof window.redirectPrefix != 'undefined' && window.redirectPrefix.length > 0) {
+    window.location.href = window.location.protocol + "//" + window.location.host + redirectPrefix + url;
+}
+else { window.location.href = window.location.protocol + "//" + window.location.host + url; }
+}
+
+    </script>
+    <style>
+        .option-dd {
+            padding-top: 14.00px;
+            padding-bottom: 14.00px;
+            font-size: 16.00px;
+        }
+        button {
+            font-size: 16.00px;
+        }
+        .sub-heading {
+            font-size: 16.00px;
+        }
+        .heading {
+            font-size: 28.00px;
+        }
+        
+        
+        .option-dd {
+border-bottom: 1.875px solid #D3D3D3;
+padding-left: 7.5px;
+text-align: left;
+display: inline-block;
+margin-right: 2.5%;
+width: 43%;
+margin-bottom: 0px;
+margin-top: 0px;
+}
+.check-mark {
+float: right;
+padding-right: 33px;
+display: none;
+font-size: 18px;
+height: 22px;
+width: 38px;
+}
+.select-menu {
+width: 100%;
+height: 80%;
+position: absolute;
+}
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: white;
+}
+button {
+margin-right: 32px;
+float: right;
+width: 128px;
+height: 46px;
+background: #FFFFFF;
+border: 2px solid #000000;
+border-radius: 4px;
+}
+.next-button {
+color: grey;
+}
+body {
+font-family: "Amazon Ember", Arial, sans-serif;
+color: #000000;
+letter-spacing: 0.73px;
+font-weight: 400;
+padding-left: 3.34%;
+padding-right: 3.34%;
+max-width: 100%;
+overflow-x: hidden;
+}
+.heading {
+font-family: BookerlyDisplay-Regular;
+letter-spacing: 0.39px;
+font-weight: 400;
+}
+.sub-heading {
+letter-spacing: 0.18px;
+font-weight: 400;
+}
+        
+        
+        
+    </style>
+</head>
+<body class="a-aui_72554-c a-aui_accordion_a11y_role_354025-c a-aui_btn_preorder_ks_359947-c a-aui_button_aria_label_markup_348458-c a-aui_csa_templates_buildin_ww_exp_337518-c a-aui_csa_templates_buildin_ww_launch_337517-c a-aui_csa_templates_declarative_ww_exp_337521-c a-aui_csa_templates_declarative_ww_launch_337520-c a-aui_dynamic_img_a11y_markup_345061-c a-aui_launch_cardui_a11y_fix_346896-c a-aui_launch_expander_ally_fix_354901-c a-aui_markup_disabled_link_btn_351411-c a-aui_pci_risk_banner_210084-c a-aui_popover_trigger_add_role_350993-c a-aui_preload_261698-c a-aui_rel_noreferrer_noopener_309527-c a-aui_template_weblab_cache_333406-c a-aui_tnr_v2_180836-c"><div id="a-page"><script type="a-state" data-a-state="{&quot;key&quot;:&quot;a-wlab-states&quot;}">{"AUI_BUTTON_ARIA_LABEL_MARKUP_348458":"C","AUI_TNR_V2_180836":"C","AUI_ACCORDION_A11Y_ROLE_354025":"C","AUI_BTN_PREORDER_KS_359947":"C","AUI_LAUNCH_EXPANDER_ALLY_FIX_354901":"C","AUI_PRELOAD_261698":"C","AUI_CSA_TEMPLATES_BUILDIN_WW_EXP_337518":"C","AUI_72554":"C","AUI_CSA_TEMPLATES_DECLARATIVE_WW_LAUNCH_337520":"C","AUI_CSA_TEMPLATES_BUILDIN_WW_LAUNCH_337517":"C","AUI_PCI_RISK_BANNER_210084":"C","AUI_CSA_TEMPLATES_DECLARATIVE_WW_EXP_337521":"C","AUI_POPOVER_TRIGGER_ADD_ROLE_350993":"C","AUI_MARKUP_DISABLED_LINK_BTN_351411":"C","AUI_TEMPLATE_WEBLAB_CACHE_333406":"C","AUI_DYNAMIC_IMG_A11Y_MARKUP_345061":"C","AUI_REL_NOREFERRER_NOOPENER_309527":"C","AUI_LAUNCH_CARDUI_A11Y_FIX_346896":"C"}</script>
+    <h1 class="heading">A lul</h1>
+    <p class="sub-heading">Huehue.</p>
+
+    <div class="select-menu">
+        
+    </div>
+    <div class="footer">
+        <button value="Next" id="submit-btn" onclick="submitSelectedCountry()" class="next-button">
+            Next
+        </button>
+        <button value="Cancel" id="cancel-btn" onclick="exitODAC()">
+            Cancel
+        </button>
+    </div>
+
+</div></body>
+</html>`
